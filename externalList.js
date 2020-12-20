@@ -10,9 +10,17 @@ const createElementFromHTML = (articleAfterTranslateText) => {
   return translatedDom; 
 }
 
+let articleAfterTranslateDom
 
-const articleAfterTranslateDom = createElementFromHTML(window[window.location.pathname.replace(/-/g, '').slice(1)])
-console.log(articleAfterTranslateDom.getElementsByTagName('p'))
+if (window.uiuxRetriever_configProd) {
+  console.log('will translate config')
+  articleAfterTranslateDom = createElementFromHTML(window.uiuxRetriever_configProd)
+} else {
+  console.log('will translate normal')
+  articleAfterTranslateDom = createElementFromHTML(window[window.location.pathname.replace(/-/g, '').slice(1)])
+  console.log(articleAfterTranslateDom.getElementsByTagName('p'))
+}
+
 
 
 // TODO: p 要改加其他 tag
