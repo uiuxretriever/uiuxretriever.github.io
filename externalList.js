@@ -17,7 +17,7 @@ if (window.uiuxRetriever_configProd) {
   articleAfterTranslateDom = createElementFromHTML(window.uiuxRetriever_configProd)
 } else {
   console.log('will translate normal')
-  articleAfterTranslateDom = createElementFromHTML(window[window.location.pathname.replace(/-/g, '').slice(1)])
+  articleAfterTranslateDom = createElementFromHTML(window[window.location.pathname.replace(/\/|-/g, '')])
   console.log(articleAfterTranslateDom.getElementsByTagName('p'))
 }
 
