@@ -27,7 +27,7 @@ if (window.uiuxRetriever_configProd) {
 // 要選到裡面的元素
 Array.prototype.forEach.call(document.getElementsByTagName('p'), (e, i) => {
   console.log('e in p is: ', e)
-  e.innerText = e.innerText + articleAfterTranslateDom.getElementsByTagName('p')[i].innerText
+  e.innerText = e.innerText + (articleAfterTranslateDom.getElementsByTagName('p')[i] && articleAfterTranslateDom.getElementsByTagName('p')[i].innerText || '')
   // e.innerText = e.innerText + '\n' + articleAfterTranslateDom.getElementsByTagName('p')[i].innerText
 })
 // e.innerText is:  He backs up his advice with research showing that market-driven companies are 31% more profitable than those that are not.
@@ -35,12 +35,12 @@ Array.prototype.forEach.call(document.getElementsByTagName('p'), (e, i) => {
 // 其他 tag 要另外寫
 Array.prototype.forEach.call(document.getElementsByTagName('h1'), (e, i) => {
   console.log('e in h1 is: ', e)
-  e.innerText = e.innerText + '\n' + articleAfterTranslateDom.getElementsByTagName('h1')[i].innerText
+  e.innerText = e.innerText + '\n' + (articleAfterTranslateDom.getElementsByTagName('h1')[i] && articleAfterTranslateDom.getElementsByTagName('h1')[i].innerText || '')
 })
 
 Array.prototype.forEach.call(document.getElementsByTagName('h2'), (e, i) => {
   console.log('e in h2 is: ', e)
-  e.innerText = e.innerText + '\n' + articleAfterTranslateDom.getElementsByTagName('h1')[i].innerText
+  e.innerText = e.innerText + '\n' + (articleAfterTranslateDom.getElementsByTagName('h1')[i] && articleAfterTranslateDom.getElementsByTagName('h1')[i].innerText || '')
 })
 
 // -----？？？？？？？？？？？？？？？？？？
