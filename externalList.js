@@ -25,6 +25,7 @@ if (window.uiuxRetriever_configProd) {
 
 // TODO: p 要改加其他 tag
 // 要選到裡面的元素
+// p 的 \n 做到後台的 regexp 裡
 Array.prototype.forEach.call(document.getElementsByTagName('p'), (e, i) => {
   console.log('e in p is: ', e)
   e.innerText = e.innerText + (articleAfterTranslateDom.getElementsByTagName('p')[i] && articleAfterTranslateDom.getElementsByTagName('p')[i].innerText || '')
@@ -40,7 +41,7 @@ Array.prototype.forEach.call(document.getElementsByTagName('h1'), (e, i) => {
 
 Array.prototype.forEach.call(document.getElementsByTagName('h2'), (e, i) => {
   console.log('e in h2 is: ', e)
-  e.innerText = e.innerText + '\n' + (articleAfterTranslateDom.getElementsByTagName('h1')[i] && articleAfterTranslateDom.getElementsByTagName('h1')[i].innerText || '')
+  e.innerText = e.innerText + '\n' + (articleAfterTranslateDom.getElementsByTagName('h2')[i] && articleAfterTranslateDom.getElementsByTagName('h2')[i].innerText || '')
 })
 
 // -----？？？？？？？？？？？？？？？？？？
