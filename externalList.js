@@ -26,6 +26,7 @@ if (window.uiuxRetriever_configProd) {
 // TODO: p 要改加其他 tag
 // 要選到裡面的元素
 Array.prototype.forEach.call(document.getElementsByTagName('p'), (e, i) => {
+  console.log('e in p is: ', e)
   e.innerText = e.innerText + articleAfterTranslateDom.getElementsByTagName('p')[i].innerText
   // e.innerText = e.innerText + '\n' + articleAfterTranslateDom.getElementsByTagName('p')[i].innerText
 })
@@ -33,10 +34,12 @@ Array.prototype.forEach.call(document.getElementsByTagName('p'), (e, i) => {
 
 // 其他 tag 要另外寫
 Array.prototype.forEach.call(document.getElementsByTagName('h1'), (e, i) => {
+  console.log('e in h1 is: ', e)
   e.innerText = e.innerText + '\n' + articleAfterTranslateDom.getElementsByTagName('h1')[i].innerText
 })
 
 Array.prototype.forEach.call(document.getElementsByTagName('h2'), (e, i) => {
+  console.log('e in h2 is: ', e)
   e.innerText = e.innerText + '\n' + articleAfterTranslateDom.getElementsByTagName('h1')[i].innerText
 })
 
